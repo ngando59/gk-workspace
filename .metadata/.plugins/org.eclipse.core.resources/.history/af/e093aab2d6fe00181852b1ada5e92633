@@ -1,0 +1,9 @@
+package gk.ngando.tpjdbc.domain;
+
+import java.sql.Connection;
+
+public class Connexion {
+	static String nomDriverMySQL = "com.mysql.jdbc.Driver";
+	static String nomURL = "jdbc:mysql://localhost:3306/basesql";
+	static Connection connex;
+}

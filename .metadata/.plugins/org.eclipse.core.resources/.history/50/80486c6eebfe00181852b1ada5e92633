@@ -1,0 +1,25 @@
+package gk.ngando.tpjdbc.ingenieur.dao;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import gk.ngando.tpjdbc.ingenieur.business.IngenieurDAO;
+
+public class MySQLDAOFactory extends DaoFactory {
+	private static String driver = "com.mysql.jdbc.Driver";
+	private static String host = "jdbc:mysql://localhost:3306/";
+	private static String database = "basesql";
+	private static String user = "root";
+	private static String password = "";
+
+	public static Connection createConnection() throws SQLException {
+		System.setProperty("jdbc.drivers", driver);
+	}
+	
+	@Override
+	public IngenieurDAO getIngenieurDAO() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

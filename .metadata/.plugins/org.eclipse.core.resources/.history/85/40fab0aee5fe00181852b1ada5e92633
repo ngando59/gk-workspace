@@ -1,0 +1,23 @@
+package gk.ngando.tpjdbc.dao;
+
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DaoFactory {
+	private static String driverMySQL = "com.mysql.jdbc.Driver";
+	private static String host = "jdbc:mysql://localhost:3306/basesql";
+	private static String database = "db_subtitles";
+	private static String user = "root";
+	private static String password = "";
+
+	public Connection getConnection() throws SQLException {
+		try {
+			Class.forName(DRIVER);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return DriverManager.getConnection(HOST + "/" + DATABASE, USER,
+				PASSWORD);
+	}
+}

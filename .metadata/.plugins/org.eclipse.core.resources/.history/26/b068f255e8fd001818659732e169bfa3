@@ -1,0 +1,70 @@
+package gk.ngando.gestioncompte.test;
+
+import gk.ngando.gestioncompte.domain.Compte;
+import gk.ngando.gestioncompte.domain.Livret;
+import gk.ngando.gestioncompte.domain.Pel;
+import gk.ngando.gestioncompte.domain.Remunerable;
+
+public class TestCompte {
+	static Compte monCompte;
+	static Livret monLivret;
+	static Pel monPel;
+
+	public static void creationDesComptes() {
+		monCompte = new Compte();
+		monCompte.depotDe(100);
+		monCompte.retraitDe(200);
+
+		monLivret = new Livret();
+		monLivret.depotDe(1000);
+		monLivret.depotDe(1000);
+
+		monPel = new Pel();
+		monPel.depotDe(1000);
+	}
+
+	private static void ensembleComptes() {
+		Compte comptes[] = { monCompte, monLivret, monPel };
+		System.out.println("Soldes : ");
+		for (Compte compte : comptes) {
+			System.out.println(compte + " :	" + compte.getSolde() + "€");
+		}
+	}
+
+	private static void ensembleRemunerables() {
+		Remunerable comptes[] = { monLivret, monPel };
+		System.out.println("Interet 2 %");
+		for (Remunerable compte : comptes) {
+			System.out.println(compte.calculInteret(2));
+		}
+	}
+
+	public static void main(String[] args) {
+
+		/*System.out.println("Mes comptes :");
+		creationDesComptes();
+		ensembleComptes();
+		ensembleRemunerables();*/
+
+		System.out.println("Solde : " + monCompte.getSolde() + " €");
+		System.out.println("Dépot 1000 €");
+		monCompte.depotDe(1000);
+		System.out.println("Dépot 500 €");
+		monCompte.depotDe(500);
+		System.out.println("Retrait 10 €");
+		monCompte.retraitDe(10);
+		monCompte.setDecouvert(100);
+		System.out.println("Retrait 1600 €");
+		monCompte.retraitDe(1500);
+
+		int soldeAvantRetrait2000 = monCompte.getSolde();
+		System.out.println("Tentative de retrait 2000 €");
+		monCompte.retraitDe(2000);
+
+		if (monCompte.getSolde() == soldeAvantRetrait2000) {
+			System.out.println("Retrait refusé !");
+		}
+		System.out.println("Solde : " + monCompte.getSolde() + " €");
+		System.out.println(monCompte.historique());
+	}
+}

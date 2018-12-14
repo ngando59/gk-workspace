@@ -1,0 +1,15 @@
+package gk.ngando.gestioncompte.mouvement;
+
+public class Retrait extends Mouvement {
+
+	public Retrait(int montant) {
+		super(montant);
+	}
+
+	@Override
+	String getTypeMvt() {
+		// TODO Auto-generated method stub
+		return "Retrait";
+	}
+
+}

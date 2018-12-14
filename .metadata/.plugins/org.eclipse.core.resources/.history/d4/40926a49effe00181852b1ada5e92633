@@ -1,0 +1,126 @@
+package gk.ngando.tpjdbc.test;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import com.mysql.jdbc.PreparedStatement;
+
+public class Requete {
+	static String nomDriverMySQL = "com.mysql.jdbc.Driver";
+	static String nomURL = "jdbc:mysql://localhost:3306/basesql";
+	static Connection connex;
+	static Scanner in = new Scanner(System.in);
+
+	public static void listeIngenieurs() {
+
+		try {
+			Class.forName(nomDriverMySQL);
+			connex = DriverManager.getConnection(nomURL, "root", "");
+
+			PreparedStatement preparedStatement = (PreparedStatement) connex
+					.prepareStatement("SELECT mle, nom, notel, datnais FROM ingenieur");
+			ResultSet result = preparedStatement.executeQuery();
+			while (result.next()) {
+				System.out.println(result.getString("mle") + " "
+						+ result.getString("nom") + " "
+						+ result.getString("notel") + " "
+						+ result.getDate("datnais"));
+			}
+			connex.close();
+		} catch (ClassNotFoundException e) {
+			System.out.println("Problème ClassNotFoundException");
+			System.out.println("Erreur SQL : " + e.getMessage());
+		} catch (SQLException e) {
+			System.out.println("Problème ClassNotFoundException");
+			System.out.println("Erreur SQL : " + e.getMessage());
+			System.out.println("State : " + e.getSQLState());
+			System.out.println("Code : " + e.getErrorCode());
+		}
+	}
+
+	public static void getIngenieurByVille() {
+		try {
+			System.out.print("Entre une ville : ");
+			String ville = in.next();
+			Class.forName(nomDriverMySQL);
+			connex = DriverManager.getConnection(nomURL, "root", "");
+
+			PreparedStatement preparedStatement = (PreparedStatement) connex
+					.prepareStatement("SELECT mle, nom, notel, datnais, ville FROM ingenieur WHERE ville = ?");
+			preparedStatement.setString(1, ville);
+			ResultSet result = preparedStatement.executeQuery();
+			int n = 0;
+			while (result.next()) {
+				n++;
+				System.out.println(result.getString("mle") + "	"
+						+ result.getString("nom") + "	"
+						+ result.getString("notel") + "	"
+						+ result.getDate("datnais") + "	"
+						+ result.getString("ville"));
+			}
+			if (n == 0) {
+				System.out.println("Pas d'ingénieur à " + ville + " !");
+			}
+			connex.close();
+		} catch (ClassNotFoundException e) {
+			System.out.println("Problème ClassNotFoundException");
+			System.out.println("Erreur SQL : " + e.getMessage());
+		} catch (SQLException e) {
+			System.out.println("Problème ClassNotFoundException");
+			System.out.println("Erreur SQL : " + e.getMessage());
+			System.out.println("State : " + e.getSQLState());
+			System.out.println("Code : " + e.getErrorCode());
+		}
+	}
+
+	public static void miseAJourVilleParMle() {
+		try {
+			System.out.print("Entre le matricule : ");
+			int mle = in.nextInt();
+			System.out.print("Entre la nouvelle ville : ");
+			String ville = in.next();
+
+			Class.forName(nomDriverMySQL);
+			connex = DriverManager.getConnection(nomURL, "root", "");
+
+			connex.setAutoCommit(false);
+
+			PreparedStatement preparedStatement = (PreparedStatement) connex
+					.prepareStatement("UPDATE ingenieur SET ville = ? WHERE mle = ?");
+			preparedStatement.setString(1, ville);
+			preparedStatement.setInt(2, mle);
+			preparedStatement.executeUpdate();
+
+			PreparedStatement statementVerif = (PreparedStatement) connex
+					.prepareStatement("SELECT mle, nom, ville FROM ingenieur WHERE mle = ?");
+			statementVerif.setInt(1, mle);
+			ResultSet result = statementVerif.executeQuery();
+
+			while (result.next()) {
+				System.out.println(result.getString("mle") + "	"
+						+ result.getString("nom") + "	"
+						+ result.getString("ville"));
+			}
+			connex.rollback();
+			connex.close();
+		} catch (ClassNotFoundException e) {
+			System.out.println("Problème ClassNotFoundException");
+			System.out.println("Erreur SQL : " + e.getMessage());
+		} catch (SQLException e) {
+			System.out.println("Problème ClassNotFoundException");
+			System.out.println("Erreur SQL : " + e.getMessage());
+			System.out.println("State : " + e.getSQLState());
+			System.out.println("Code : " + e.getErrorCode());
+		}
+	}
+
+	public static void main(String[] args) {
+		// listeIngenieurs();
+		// getIngenieurByVille();
+		miseAJourVilleParMle();
+	}
+
+}

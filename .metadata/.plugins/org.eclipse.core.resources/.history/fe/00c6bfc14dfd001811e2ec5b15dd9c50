@@ -1,0 +1,17 @@
+package gk.ngando.geometrie.domain;
+
+public class Disque implements Courbe
+
+	@Override
+	public double longueur() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void doubler() {
+		// TODO Auto-generated method stub
+		
+	}, Surface {
+
+}

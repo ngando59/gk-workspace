@@ -1,0 +1,7 @@
+package gk.ngando.gktestclient;
+
+public class TestClient {
+	public static void main(String[] args) {
+
+	}
+}

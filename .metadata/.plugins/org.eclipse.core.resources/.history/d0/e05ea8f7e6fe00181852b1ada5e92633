@@ -1,0 +1,39 @@
+package gk.ngando.tpjdbc.ingenieur.domain;
+
+public class Ingenieur {
+	private int mle;
+	private String nom;
+	private String prenom;
+	private String noss;
+	private String datnais;
+	private String notel;
+	private String adresse;
+	private String codepost;
+	private String ville;
+	private char sexe;
+	private char situation;
+	private double cpt;
+
+	public Ingenieur() {
+		super();
+	}
+
+	public Ingenieur(int mle, String nom, String prenom, String noss,
+			String datnais, String notel, String adresse, String codepost,
+			String ville, char sexe, char situation, double cpt) {
+		super();
+		this.mle = mle;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.noss = noss;
+		this.datnais = datnais;
+		this.notel = notel;
+		this.adresse = adresse;
+		this.codepost = codepost;
+		this.ville = ville;
+		this.sexe = sexe;
+		this.situation = situation;
+		this.cpt = cpt;
+	}
+
+}

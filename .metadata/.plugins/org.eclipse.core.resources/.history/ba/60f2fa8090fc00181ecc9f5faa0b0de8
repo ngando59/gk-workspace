@@ -1,0 +1,8 @@
+package gk.ngando.demo.domain;
+
+public class Calcul {
+
+	public int additionner(int ...entiers){
+		
+	}
+}

@@ -1,0 +1,80 @@
+package gk.ngando.tpjdbc.ingenieur.business.impl;
+
+import gk.ngando.tpjdbc.ingenieur.business.IngenieurDAO;
+import gk.ngando.tpjdbc.ingenieur.dao.DaoException;
+import gk.ngando.tpjdbc.ingenieur.dao.MySQLDAOFactory;
+import gk.ngando.tpjdbc.ingenieur.domain.Ingenieur;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.mysql.jdbc.PreparedStatement;
+
+public class IngenieurDAOImpl implements IngenieurDAO {
+
+	static Connection conn = null;
+	String findall = "SELECT * FROM ingenieur";
+
+	public IngenieurDAOImpl() {
+		super();
+	}
+
+	private static Connection getConnection() throws DaoException {
+		try {
+			conn = MySQLDAOFactory.createConnection();
+		} catch (SQLException e) {
+			throw new DaoException("Connexion impossible", e);
+		}
+		return conn;
+	}
+
+	private static void closeConnection() throws DaoException {
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			throw new DaoException("Déconnexion impossible", e);
+		}
+	}
+
+	@Override
+	public List<Ingenieur> findAll() {
+		List<Ingenieur> ingenieurs = new ArrayList<Ingenieur>();
+
+		try {
+			Connection connexion = getConnection();
+			PreparedStatement preparedStatement = (PreparedStatement) connexion
+					.prepareStatement(findall);
+		} catch (SQLException e) {
+			
+		}
+
+		return null;
+	}
+
+	@Override
+	public Ingenieur findById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean create(Ingenieur ingenieur) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean update(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean delete(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

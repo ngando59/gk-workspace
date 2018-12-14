@@ -1,0 +1,5 @@
+package gk.ngando.gestioncompte.compte;
+
+public class Agio extends Retrait {
+
+}

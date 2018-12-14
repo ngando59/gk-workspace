@@ -1,0 +1,5 @@
+package gk.ngando.gestioncompte.mouvement;
+
+public class Depot {
+
+}

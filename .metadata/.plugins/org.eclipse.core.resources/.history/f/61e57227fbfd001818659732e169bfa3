@@ -1,0 +1,18 @@
+package gk.ngando.gestioncompte.domain;
+
+public class Livret extends Compte implements Remunerable {
+
+	public Livret(String numeroCompte) {
+		super(numeroCompte);
+	}
+
+	@Override
+	public double calculInteret(double taux) {
+		return (super.getSolde() * taux) / 100;
+	}
+
+	@Override
+	public String toString() {
+		return "Livret[" + this.getNumeroCompte() + "]";
+	}
+}

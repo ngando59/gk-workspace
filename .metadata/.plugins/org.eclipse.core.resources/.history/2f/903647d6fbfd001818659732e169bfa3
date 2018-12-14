@@ -1,0 +1,8 @@
+package gk.ngando.gestioncompte.mouvement;
+
+public class Depot extends Mouvement {
+
+	public Depot(int montant) {
+		
+	}
+}

@@ -1,0 +1,28 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.util.Scanner;
+
+public class Ecrire {
+
+	static Scanner in = new Scanner(System.in);
+
+	public String lire() {
+		String str = "";
+		System.out.print("Ecris un truc : ");
+		str = in.next();
+		return str;
+	}
+
+	public static void main(String[] args) {
+		try {
+			FileWriter fw = new FileWriter("c:\\test.txt");
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.write("Ceci est mon fichier");
+			bw.newLine();
+			bw.write("Il est à moi...");
+			bw.close();
+		} catch (Exception e) {
+			System.out.println("Erreur " + e);
+		}
+	}
+}

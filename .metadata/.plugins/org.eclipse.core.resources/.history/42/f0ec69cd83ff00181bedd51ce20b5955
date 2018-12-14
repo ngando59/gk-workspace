@@ -1,0 +1,20 @@
+package gk.ngando.gktestclient;
+
+import java.io.FileOutputStream;
+
+public class TestClient {
+	public static void main(String[] args) {
+		Client client1 = new Client();
+		client1.setNom("Dupontsansn°age10");
+		client1.setTelephone("0123456789");
+		client1.setAge(10);
+		System.out.println("Client : " + client1.getNom() + " / "
+				+ client1.getAge() + " ans");
+		Client client2 = new Client(100);
+		client2.setNom("AvecNum");
+		client2.setAge(20);
+		System.out.println("Client : " + client2.getNom() + " / "
+				+ client2.getAge() + " ans");
+		FileOutputStream fos = new FileOutputStream("C://test.txt");
+	}
+}

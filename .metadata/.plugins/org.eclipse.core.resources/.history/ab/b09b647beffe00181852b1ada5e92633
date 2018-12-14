@@ -1,0 +1,20 @@
+package gk.ngando.tpjdbc.test;
+
+import java.awt.List;
+
+import gk.ngando.tpjdbc.ingenieur.business.IngenieurDAO;
+import gk.ngando.tpjdbc.ingenieur.business.impl.IngenieurDAOImpl;
+
+public class Requete {
+
+	public static void listeIngenieurs() {
+		IngenieurDAO ingenieursDAO = new IngenieurDAOImpl();
+		List<Ingenieur> ingenieurs = ingenieursDAO.findAll();
+	}
+
+	public static void main(String[] args) {
+		listeIngenieurs();
+
+	}
+
+}

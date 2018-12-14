@@ -1,0 +1,8 @@
+package gk.ngando.tpjdbc.ingenieur.business;
+
+import gk.ngando.tpjdbc.ingenieur.domain.Ingenieur;
+
+public interface IngenieurDAO {
+
+	List<Ingenieur> findAll();
+}

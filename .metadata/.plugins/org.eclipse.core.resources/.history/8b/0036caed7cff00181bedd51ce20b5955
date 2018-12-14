@@ -1,0 +1,22 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.util.Scanner;
+
+public class Ecrire {
+
+	static Scanner in = new Scanner(System.in);
+	
+	
+	public static void main(String[] args) {
+		try {
+			FileWriter fw = new FileWriter("c:\\test.txt");
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.write("Ceci est mon fichier");
+			bw.newLine();
+			bw.write("Il est à moi...");
+			bw.close();
+		} catch (Exception e) {
+			System.out.println("Erreur " + e);
+		}
+	}
+}

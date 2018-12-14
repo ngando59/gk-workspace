@@ -1,0 +1,24 @@
+package gk.ngando.gktestclient;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+public class TestClient {
+	public static void main(String[] args) throws IOException {
+		Client client1 = new Client();
+		client1.setNom("Dupontsansn°age10");
+		client1.setTelephone("0123456789");
+		client1.setAge(10);
+		System.out.println("Client : " + client1.getNom() + " / "
+				+ client1.getAge() + " ans");
+		Client client2 = new Client(100);
+		client2.setNom("AvecNum");
+		client2.setAge(20);
+		System.out.println("Client : " + client2.getNom() + " / "
+				+ client2.getAge() + " ans");
+		FileOutputStream fos = new FileOutputStream("C://test.txt");
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+	}
+}

@@ -1,0 +1,11 @@
+package gk.ngando.demo.test;
+
+import gk.ngando.demo.domain.Client;
+
+public class ClientTest {
+
+	public static void main(String[] args) {
+		Client a = new Client();
+	}
+
+}

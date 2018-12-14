@@ -1,0 +1,9 @@
+package gk.ngando.geometrie.test;
+
+public class TestGeometrie {
+
+	public static void main(String[] args) {
+		
+	}
+	
+}

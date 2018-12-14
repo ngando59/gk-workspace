@@ -1,0 +1,5 @@
+package gk.ngando.tpjdbc.domain;
+
+public class Connexion {
+
+}

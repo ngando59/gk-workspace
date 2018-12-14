@@ -1,0 +1,22 @@
+package gk.ngando.algo;
+
+public class Main {
+
+	public Main() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public boolean estPalindrome(String str) {
+		boolean result = true;
+		String[] lettres = new String[str.length()];
+		for (int i = 0; i < str.length(); i++) {
+
+		}
+		return result;
+	}
+
+	public static void main(String[] args) {
+
+	}
+
+}

@@ -1,0 +1,5 @@
+package gk.ngando.gestioncompte.domain;
+
+public enum TypeMvt {
+
+}

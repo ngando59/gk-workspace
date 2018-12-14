@@ -1,0 +1,12 @@
+package gk.ngando.demo.domain;
+
+public class Calcul {
+
+	public int additionner(int... entiers) {
+		int somme = 0;
+		for (int val : entiers) {
+			somme += val;
+		}
+		return somme;
+	}
+}

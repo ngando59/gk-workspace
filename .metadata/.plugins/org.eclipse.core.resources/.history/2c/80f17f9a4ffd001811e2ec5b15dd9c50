@@ -1,0 +1,10 @@
+package gk.ngando.gestioncompte.domain;
+
+public class Livret extends Compte implements Remunerable {
+
+	@Override
+	public double calculInteret(double taux) {
+		return 0;
+	}
+
+}

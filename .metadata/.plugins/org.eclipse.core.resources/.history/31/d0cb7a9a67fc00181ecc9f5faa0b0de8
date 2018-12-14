@@ -1,0 +1,21 @@
+package gk.ngando.demo.domain;
+
+public class Voiture {
+	private int numeroSerie;
+	private double poids;
+	private String immatriculation;
+	private double kilometrage;
+
+	public void demarrer() {
+
+	}
+
+	public void arreter() {
+
+	}
+
+	public void rouler() {
+
+	}
+
+}

@@ -1,0 +1,43 @@
+package gk.ngando.demo.domain;
+
+public class Client {
+	private int numero;
+	private String nom;
+	private Adresse adresse;
+
+	public Client() {
+		nom = "Inconnu";
+		numero = 0;
+	}
+
+	public Client(int numero, String nom) {
+		super();
+		this.numero = numero;
+		this.nom = nom;
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String retourneInfo() {
+		return "Client N°" + numero + " - " + nom;
+	}
+
+	public String retourneInfo(String info) {
+		return info + this.retourneInfo();
+	}
+
+}

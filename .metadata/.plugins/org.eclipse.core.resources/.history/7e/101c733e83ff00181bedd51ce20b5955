@@ -1,0 +1,8 @@
+package gk.ngando.gktestclient;
+
+public class TestClient {
+	public static void main(String[] args) {
+		Client client = new Client();
+		client.setNom("Dupontsansn°age10");
+	}
+}

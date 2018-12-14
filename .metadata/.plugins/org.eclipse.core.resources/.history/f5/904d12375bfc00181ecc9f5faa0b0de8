@@ -1,0 +1,11 @@
+package gk.ngando.demo.domain;
+
+public class Client {
+	private int numero;
+	private String nom;
+	
+	public Client() {
+		nom = "Inconnu";
+		numero = 0;
+	}
+}

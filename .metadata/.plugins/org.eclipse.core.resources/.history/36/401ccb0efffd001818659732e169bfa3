@@ -1,0 +1,17 @@
+package gk.ngando.gestioncompte.mouvement;
+
+import gk.ngando.gestioncompte.compte.Mouvement;
+
+public class Retrait extends Mouvement {
+
+	public Retrait(int montant) {
+		super(montant);
+		super.setTypeMvt("Retrait");
+	}
+
+	@Override
+	public int getMoins() {
+		return this.getMontant();
+	}
+
+}

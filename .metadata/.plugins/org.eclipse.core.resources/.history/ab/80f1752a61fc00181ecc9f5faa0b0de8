@@ -1,0 +1,15 @@
+package gk.ngando.demo.test;
+
+import gk.ngando.demo.domain.Client;
+
+public class ClientTest {
+
+	public static void main(String[] args) {
+		Client c = new Client();
+		c.numero = 1234;
+		c.nom = "John Doe";
+		String info = c.retourneInfo();
+		System.out.println(info);
+	}
+
+}

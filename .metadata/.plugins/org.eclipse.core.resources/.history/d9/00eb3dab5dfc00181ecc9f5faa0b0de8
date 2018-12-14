@@ -1,0 +1,5 @@
+package gk.ngando.demo.domain;
+
+public class Voiture {
+
+}

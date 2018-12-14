@@ -1,0 +1,19 @@
+package gk.ngando.gestioncompte.domain;
+
+public class Pel extends Compte implements Remunerable {
+
+	public Pel(String numeroCompte) {
+		super(numeroCompte);
+	}
+
+	@Override
+	public double calculInteret(double taux) {
+		return (super.getSolde() * taux) / 100;
+	}
+	
+	@Override
+	public String toString(){
+		
+	}
+
+}

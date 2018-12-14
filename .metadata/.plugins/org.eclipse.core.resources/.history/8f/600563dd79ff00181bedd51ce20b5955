@@ -1,0 +1,17 @@
+package gk.test.domain;
+
+import java.io.File;
+
+public class Listeur {
+	public static void main(String[] args) {
+		litrep(new File("."));
+	}
+
+	public static void litrep(File rep) {
+		if (rep.isDirectory()) { // liste les fichier du répertoire
+			String t[] = rep.list();
+			for (int i = 0; i < t.length; i++)
+				System.out.println(t[i]);
+		}
+	}
+}

@@ -1,0 +1,5 @@
+package gk.ngando.gestioncompte.remunerable;
+
+public interface Remunerable {
+	public double calculInteret(double taux);
+}

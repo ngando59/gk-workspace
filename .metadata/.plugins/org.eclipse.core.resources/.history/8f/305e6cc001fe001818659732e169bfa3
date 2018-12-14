@@ -1,0 +1,10 @@
+package gk.ngando.gestioncompte.compte;
+
+public class Agio extends Mouvement {
+
+	@Override
+	public int getMoins() {
+		
+	}
+
+}

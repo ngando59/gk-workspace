@@ -1,0 +1,19 @@
+package gk.ngando.tpjdbc.ingenieur.business;
+
+import gk.ngando.tpjdbc.ingenieur.domain.Ingenieur;
+
+import java.util.List;
+
+public interface IngenieurDAO {
+
+	List<Ingenieur> findAll();
+
+	Ingenieur findById(int id);
+
+	boolean create(Ingenieur ingenieur);
+
+	boolean update(int id);
+
+	boolean delete(int id);
+
+}

@@ -1,0 +1,5 @@
+package gk.ngando.tpjdbc.dao;
+
+public interface IngenieurDAO {
+
+}

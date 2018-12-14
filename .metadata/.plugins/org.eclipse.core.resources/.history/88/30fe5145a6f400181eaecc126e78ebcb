@@ -1,0 +1,21 @@
+package gk.ngando.algo;
+
+public class Main {
+
+	public Main() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public boolean estPalindrome(String str) {
+		boolean result = true;
+		
+		
+		return result;
+	}
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+}

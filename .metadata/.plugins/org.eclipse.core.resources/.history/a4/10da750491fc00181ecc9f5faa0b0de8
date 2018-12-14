@@ -1,0 +1,13 @@
+package gk.ngando.demo.test;
+
+import gk.ngando.demo.domain.Calcul;
+
+public class TestCalcul {
+
+	public static void main(String[] args) {
+		Calcul cal = new Calcul();
+		System.out.println("Add 3 elts : " + cal.additionner(1, 2, 3));
+		System.out.println("Add 6 elts : " + cal.additionner(1, 2, 3, 4, 5, 6));
+
+	}
+}

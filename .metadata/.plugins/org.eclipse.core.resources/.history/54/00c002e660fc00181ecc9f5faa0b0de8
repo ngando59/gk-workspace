@@ -1,0 +1,16 @@
+package gk.ngando.demo.domain;
+
+public class Client {
+	public int numero;
+	public String nom;
+
+	public Client() {
+		nom = "Inconnu";
+		numero = 0;
+	}
+
+	public String retourneInfo() {
+		return "Le client est " + numero + " - " + nom;
+	}
+
+}

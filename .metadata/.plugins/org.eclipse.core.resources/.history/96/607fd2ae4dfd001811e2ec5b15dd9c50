@@ -1,0 +1,5 @@
+package gk.ngando.geometrie.domain;
+
+public class Rectangle implements Geometrie, Surface {
+
+}

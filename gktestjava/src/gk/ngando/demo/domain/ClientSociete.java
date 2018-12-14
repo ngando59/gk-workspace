@@ -1,0 +1,33 @@
+package gk.ngando.demo.domain;
+
+public class ClientSociete extends Client {
+	private int nbEmployees;
+	private String siret;
+
+	public ClientSociete() {
+		super();
+	}
+
+	public ClientSociete(int nbEmployees, String siret) {
+		super();
+		this.nbEmployees = nbEmployees;
+		this.siret = siret;
+	}
+
+	public int getNbEmployees() {
+		return nbEmployees;
+	}
+
+	public void setNbEmployees(int nbEmployees) {
+		this.nbEmployees = nbEmployees;
+	}
+
+	public String getSiret() {
+		return siret;
+	}
+
+	public void setSiret(String siret) {
+		this.siret = siret;
+	}
+
+}

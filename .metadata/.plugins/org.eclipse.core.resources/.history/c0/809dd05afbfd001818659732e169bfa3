@@ -1,0 +1,50 @@
+package gk.ngando.gestioncompte.mouvement;
+
+import java.util.Date;
+
+public class Mouvement {
+
+	public static enum TypeMvt {
+		RETRAIT, DEPOT
+	};
+
+	private int montant;
+	private Date dateMvt;
+	private TypeMvt typeMvt;
+
+	public Mouvement() {
+		super();
+	}
+
+	public Mouvement(int montant, Date dateMvt, TypeMvt typeMvt) {
+		super();
+		this.montant = montant;
+		this.dateMvt = dateMvt;
+		this.typeMvt = typeMvt;
+	}
+
+	public int getMontant() {
+		return montant;
+	}
+
+	public void setMontant(int montant) {
+		this.montant = montant;
+	}
+
+	public Date getDateMvt() {
+		return dateMvt;
+	}
+
+	public void setDateMvt(Date dateMvt) {
+		this.dateMvt = dateMvt;
+	}
+
+	public TypeMvt getTypeMvt() {
+		return typeMvt;
+	}
+
+	public void setTypeMvt(TypeMvt typeMvt) {
+		this.typeMvt = typeMvt;
+	}
+
+}

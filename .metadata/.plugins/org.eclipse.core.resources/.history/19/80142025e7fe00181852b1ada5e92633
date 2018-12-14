@@ -1,0 +1,8 @@
+package gk.ngando.tpjdbc.ingenieur.business;
+
+import java.awt.List;
+
+public interface IngenieurDAO {
+
+	List<Ingenieur>
+}

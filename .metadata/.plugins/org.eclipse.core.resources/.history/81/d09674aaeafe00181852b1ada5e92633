@@ -1,0 +1,49 @@
+package gk.ngando.tpjdbc.ingenieur.dao;
+
+import gk.ngando.tpjdbc.ingenieur.business.IngenieurDAO;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public abstract class DaoFactory {
+
+	public enum TypeDAO {
+		MSACCESS, ORACLE, DB2_AS400, MYSQL
+	};
+
+	public abstract IngenieurDAO getIngenieurDAO();
+
+	// public abstract ProjetDAO getProjetDAO();
+
+	public static DaoFactory getDAOFactory(TypeDAO type) {
+		switch (type) {
+		case MSACCESS:
+			return new MSAccessDAOFactory();
+			break;
+		case ORACLE:
+			return new OracleDAOFactory();
+			break;
+		case MYSQL:
+			return MySQLDAOFactory();
+			break;
+		default:
+			break;
+		}
+	}
+
+	private static String driver = "com.mysql.jdbc.Driver";
+	private static String host = "jdbc:mysql://localhost:3306/";
+	private static String database = "basesql";
+	private static String user = "root";
+	private static String password = "";
+
+	public Connection getConnection() throws SQLException {
+		try {
+			Class.forName(driver);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return DriverManager.getConnection(host + database, user, password);
+	}
+}

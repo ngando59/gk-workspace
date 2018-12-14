@@ -1,0 +1,20 @@
+package gk.ngando.gktestclient;
+
+import java.io.Serializable;
+
+public class Client implements Serializable {
+	private int numeroClient;
+	private String nom;
+	private String telephone;
+	private transient int age;
+	public Client() {
+		super();
+	}
+	public Client(int numeroClient) {
+		super();
+		this.numeroClient = numeroClient;
+	}
+	
+	
+
+}

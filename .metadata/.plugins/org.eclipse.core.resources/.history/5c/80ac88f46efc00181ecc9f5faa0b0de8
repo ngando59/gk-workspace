@@ -1,0 +1,9 @@
+package gk.ngando.demo.test;
+
+public class HeritageTest {
+
+	public static void main(String[] args) {
+
+	}
+
+}

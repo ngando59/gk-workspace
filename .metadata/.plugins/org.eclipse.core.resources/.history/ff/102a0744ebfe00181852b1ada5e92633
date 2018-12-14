@@ -1,0 +1,13 @@
+package gk.ngando.tpjdbc.ingenieur.dao;
+
+import gk.ngando.tpjdbc.ingenieur.business.IngenieurDAO;
+
+public class MySQLDAOFactory extends DaoFactory {
+
+	@Override
+	public IngenieurDAO getIngenieurDAO() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

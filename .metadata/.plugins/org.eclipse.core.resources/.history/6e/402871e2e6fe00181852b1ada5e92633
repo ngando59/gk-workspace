@@ -1,0 +1,17 @@
+package gk.ngando.tpjdbc.ingenieur.domain;
+
+public class Ingenieur {
+	private int mle;
+	private String nom;
+	private String prenom;
+	private String noss;
+	private String datnais;
+	private String notel;
+	private String adresse;
+	private String codepost;
+	private String ville;
+	private char sexe;
+	private char situation;
+	private douvle cpt;
+
+}

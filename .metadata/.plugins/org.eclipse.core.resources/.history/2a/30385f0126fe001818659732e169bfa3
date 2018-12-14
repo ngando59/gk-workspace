@@ -1,0 +1,17 @@
+package gk.ngando.demo.domain;
+
+public class ThreadAffichageCompteur extends Thread {
+	private int nbMax;
+
+	public ThreadAffichageCompteur() {
+		super();
+		this.nbMax = 7;
+	}
+
+	public ThreadAffichageCompteur(String name, int nbMax) {
+		super(name);
+		// TODO Auto-generated constructor stub
+	}
+
+	
+}

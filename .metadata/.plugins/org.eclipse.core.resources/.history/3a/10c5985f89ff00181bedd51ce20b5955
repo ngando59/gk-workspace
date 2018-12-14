@@ -1,0 +1,17 @@
+package gk.ngando.gktestclient;
+
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+
+public class TestVitesseFlux {
+
+	public static void main(String[] args) {
+		FileInputStream fis;
+		BufferedInputStream bis;
+		try{
+			
+		}
+
+	}
+
+}

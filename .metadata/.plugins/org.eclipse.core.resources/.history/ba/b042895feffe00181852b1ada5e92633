@@ -1,0 +1,17 @@
+package gk.ngando.tpjdbc.test;
+
+import gk.ngando.tpjdbc.ingenieur.business.impl.IngenieurDAOImpl;
+
+
+public class Requete {
+
+	public static void listeIngenieurs() {
+		IngenieurDAO ingenieurs = new IngenieurDAOImpl();
+	}
+
+	public static void main(String[] args) {
+		listeIngenieurs();
+
+	}
+
+}

@@ -1,0 +1,14 @@
+package gk.ngando.gktestclient;
+
+public class TestClient {
+	public static void main(String[] args) {
+		Client client1 = new Client();
+		client1.setNom("Dupontsansn°age10");
+		client1.setTelephone("0123456789");
+		client1.setAge(10);
+		System.out.println("Client : " + client1.getNom() + " / "
+				+ client1.getAge() + " ans");
+		Client client2 = new Client(100);
+
+	}
+}

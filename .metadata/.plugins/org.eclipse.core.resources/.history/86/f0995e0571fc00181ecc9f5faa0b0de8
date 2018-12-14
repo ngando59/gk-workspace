@@ -1,0 +1,12 @@
+package gk.ngando.demo.domain;
+
+public class Adresse {
+	private int numero;
+	private String ville;
+
+	public Adresse() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+}

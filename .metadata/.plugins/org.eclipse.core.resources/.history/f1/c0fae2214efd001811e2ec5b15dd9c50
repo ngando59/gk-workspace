@@ -1,0 +1,30 @@
+package gk.ngando.geometrie.domain;
+
+public class Disque implements Courbe, Surface {
+
+	private double rayon;
+
+	public Disque(double rayon) {
+		super();
+		this.rayon = rayon;
+	}
+
+	@Override
+	public double surface() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double longueur() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void doubler() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,11 @@
+package gk.ngando.gestioncompte.mouvement;
+
+public class Depot extends Mouvement {
+
+	private TypeMvt typeMvt;
+
+	public Depot(int montant) {
+		super(montant);
+		this.typeMvt = typeMvt;
+	}
+}

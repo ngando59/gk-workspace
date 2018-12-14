@@ -1,0 +1,61 @@
+package gk.ngando.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class DemoJdbc {
+
+	static String nomDriverMySQL = "com.mysql.jdbc.Driver";
+	static String nomURL = "jdbc:mysql://localhost:3306/basesql";
+	static Scanner in = new Scanner(System.in);
+
+	public static void getIngenieurByVille(String ville) {
+		String requeteSQL = "SELECT mle, nom, ville FROM Ingenieur WHERE ville = '"
+				+ ville + "'";
+		Connection connex;
+		Statement requete;
+		ResultSet resultat;
+		try {
+			Class.forName(nomDriverMySQL);
+			connex = DriverManager.getConnection(nomURL, "root", "");
+			requete = connex.createStatement();
+			resultat = requete.executeQuery(requeteSQL);
+			while (resultat.next()) {
+				System.out.println(" Matricule : " + resultat.getInt("mle")
+						+ " - Nom : " + resultat.getString("nom")
+						+ " - Ville : " + resultat.getString("Ville"));
+			}
+			connex.close();
+		} catch (ClassNotFoundException e) {
+			System.out.println("Problème ClassNotFoundException");
+			System.out.println("Erreur SQL : " + e.getMessage());
+		} catch (SQLException e) {
+			System.out.println("Problème ClassNotFoundException");
+			System.out.println("Erreur SQL : " + e.getMessage());
+			System.out.println("State : " + e.getSQLState());
+			System.out.println("Code : " + e.getErrorCode());
+		}
+	}
+
+	public static void main(String[] args) {
+		/*
+		 * System.out.print("Entrez ville : "); String reponse = in.nextLine();
+		 * getIngenieurByVille(reponse);
+		 */
+		try {
+			Class.forName(nomDriverMySQL);
+			connex = DriverManager.getConnection(nomURL, "root", "");
+		} catch (ClassNotFoundException e) {
+			System.out.println("Problème ClassNotFoundException");
+			System.out.println("Erreur SQL : " + e.getMessage());
+		} catch (SQLException e) {
+			System.out.println("Problème ClassNotFoundException");
+			System.out.println("Erreur SQL : " + e.getMessage());
+			System.out.println("State : " + e.getSQLState());
+			System.out.println("Code : " + e.getErrorCode());
+		}
+}

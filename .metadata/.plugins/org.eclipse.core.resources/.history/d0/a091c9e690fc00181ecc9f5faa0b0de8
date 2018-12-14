@@ -1,0 +1,10 @@
+package gk.ngando.demo.test;
+
+import gk.ngando.demo.domain.Calcul;
+
+public class TestCalcul {
+
+	public static void main(String[] args) {
+		Calcul cal = new Calcul();
+	}
+}

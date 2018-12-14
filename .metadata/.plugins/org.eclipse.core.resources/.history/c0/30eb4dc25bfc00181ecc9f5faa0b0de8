@@ -1,0 +1,9 @@
+package gk.ngando.demo.test;
+
+public class ClientTest {
+
+	public static void main(String[] args) {
+
+	}
+
+}
